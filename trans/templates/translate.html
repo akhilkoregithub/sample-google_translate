@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google Translate</title>>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            background-color: #f7fcff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 pt-5">
+        <div class="row d-flext justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Django Google translate Example Tutorial<span class="text-primary">Google Translate></span></h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{% url 'trans' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea type="text" name="txt" class="form-control" placeholder="Enter Your Text" rows="3" required="required"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <select id="inputState" class="form-control" name="lang">
+                                        <option selected value="en">English</option>
+                                        <option value="sp">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="hi">Hindi</option>
+                                        <option value="te">Telugu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary mt-2 btn-block">Translate</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="mt-4">{{result}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
